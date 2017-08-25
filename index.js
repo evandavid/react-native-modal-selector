@@ -174,7 +174,7 @@ export default class ModalSelector extends BaseComponent {
                 supportedOrientations={this.props.supportedOrientations}
                 visible={this.state.modalVisible}
                 onRequestClose={this.close}
-                animationType={this.state.animationType}
+                animationType={this.props.animationType || this.state.animationType}
             >
                 {this.renderOptionList()}
             </Modal>
