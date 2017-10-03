@@ -91,7 +91,7 @@ export default class ModalSelector extends BaseComponent {
 
     onChange(item) {
         this.props.onChange(item);
-        this.setState({selected: item.label});
+        this.setState({selected: item.value});
         this.close();
     }
 
@@ -110,7 +110,7 @@ export default class ModalSelector extends BaseComponent {
     renderSection(section) {
         return (
             <View key={section.key} style={[styles.sectionStyle,this.props.sectionStyle]}>
-                <Text style={[styles.sectionTextStyle,this.props.sectionTextStyle]}>{section.label}</Text>
+                <Text style={[styles.sectionTextStyle,this.props.sectionTextStyle]}>{section.value}</Text>
             </View>
         );
     }
@@ -119,7 +119,7 @@ export default class ModalSelector extends BaseComponent {
         return (
             <TouchableOpacity key={option.key} onPress={() => this.onChange(option)}>
                 <View style={[styles.optionStyle, this.props.optionStyle]}>
-                    <Text style={[styles.optionTextStyle,this.props.optionTextStyle]}>{option.label}</Text>
+                    <Text style={[styles.optionTextStyle,this.props.optionTextStyle]}>{option.value}</Text>
                 </View>
             </TouchableOpacity>);
     }
